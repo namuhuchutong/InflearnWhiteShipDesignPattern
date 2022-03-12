@@ -1,6 +1,8 @@
 package me.whiteship.designpatterns.singleton;
 
-public class Settings {
+import java.io.Serializable;
+
+public class Settings implements Serializable {
 
 //    private static Settings instance;
 //    private static final Settings INSTANCE = new Settings();
@@ -32,7 +34,7 @@ public class Settings {
     /*
     * thread-safe
     * eager initialization
-    * 만들어두고 쓰지 않으면 손
+    * 만들어두고 쓰지 않으면 손해
      */
 //    public static Settings getInstance() {
 //        return INSTANCE;
@@ -42,7 +44,7 @@ public class Settings {
     * thread-safe
     * double checked locking
     * 인스턴스가 없는 경우에만 블록킹이 진행
-    * 생성 후에는 동기화 스
+    * 생성 후에는 동기화
      */
 //    public static Settings getInstance() {
 //        if (instance == null) {
@@ -61,5 +63,10 @@ public class Settings {
 
     public static Settings getInstance() {
         return SettingsHolder.INSTANCE;
+    }
+
+    // 역직렬화 대응
+    protected Object readResolve() {
+        return getInstance();
     }
 }
