@@ -1,6 +1,6 @@
 package me.whiteship.designpatterns.factorymethod.after;
 
-public class WhiteshipFactory implements ShipFactory{
+public class WhiteshipFactory extends DefaultShipFactory {
 
     @Override
     public Ship createShip() {

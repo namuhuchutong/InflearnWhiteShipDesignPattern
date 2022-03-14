@@ -1,4 +1,4 @@
-package me.whiteship.designpatterns.factorymethod.after;
+package me.whiteship.designpatterns.abstractfacotry.before;
 
 public interface ShipFactory {
 
