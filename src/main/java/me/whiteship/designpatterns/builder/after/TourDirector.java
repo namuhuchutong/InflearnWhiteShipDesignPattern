@@ -14,7 +14,7 @@ public class TourDirector {
 
     public TourPlan cancunTrip() {
         return  tourPlanBuilder.title("test tour")
-                               .nightsAndDays(2, 3,)
+                               .nightsAndDays(2, 3)
                                .startDate(LocalDate.of(2022, 12, 13))
                                .whereToStay("Resort")
                                .addPlan(0, "test 1 ")
